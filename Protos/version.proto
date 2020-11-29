@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServiceNetCore";
+
+package greet;
+
+service Version {
+  rpc GetVersion (VersionRequest) returns (VersionResponse);
+}
+
+message VersionRequest {
+  string client = 1;
+}
+
+message VersionResponse {
+  string version = 1;
+  Person person = 2;
+}
+
+message Person {
+	string name = 1;
+	int32 age = 2;
+}
